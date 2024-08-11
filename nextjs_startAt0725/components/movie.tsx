@@ -25,7 +25,9 @@ export default function Movie({
                 alt={"movie poster at" + title}
                 onClick={onClickImg}
             />
-            <Link href={`/movies/${id}`}>{title}</Link>
+            <Link prefetch href={`/movies/${id}`}>
+                {title}
+            </Link>
         </div>
     );
 }
