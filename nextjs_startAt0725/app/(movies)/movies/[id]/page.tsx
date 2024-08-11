@@ -1,26 +1,20 @@
-import { API_URL } from "../../../(home)/page"
+import { Suspense } from "react";
+import MovieInfo from "../../../../components/movie-info";
+import MovieVideos from "../../../../components/movie-videos";
 
-
-async function getMovie (id : string) {
-console.log(`fetching data ${Date.now() }`)
-    await new Promise(resolve => setTimeout(resolve, 5000))
-    const data = await fetch(API_URL+ '/'+ id).then(res => res.json());
-    return data
+export default async function MoviesDetail({
+    params: { id },
+}: {
+    params: { id: string };
+}) {
+    return (
+        <div>
+            <Suspense fallback={<h1>영화 정보 로딩중 ... </h1>}>
+                <MovieInfo id={id} />
+            </Suspense>
+            <Suspense fallback={<h1>영화들 로딩중 ... </h1>}>
+                <MovieVideos id={id} />
+            </Suspense>
+        </div>
+    );
 }
-
-async function getVideos (id :string) {
-console.log(`fetching data Videos: ${Date.now() }`)
-    await new Promise(resolve => setTimeout(resolve, 5000))
-    const data = await fetch(`${API_URL}/${id}/videos`).then(res => res.json());
-    return data
-}
-
-
-export default async function MoviesDetail ({params:{id}} : {params : {id : string}}) {
-    console.log('start fetching')
-    const [movie, videos] = await Promise.all([getMovie(id), getVideos(id)])
-    console.log('end fetching')
-
-    return <h1>{movie.title}
-    </h1>
-} 
