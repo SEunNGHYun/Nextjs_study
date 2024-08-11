@@ -3,7 +3,6 @@ import { API_URL } from "../app/(home)/page";
 async function getVideos(id: string) {
     console.log(`fetching data Videos: ${Date.now()}`);
     await new Promise((resolve) => setTimeout(resolve, 3000));
-    // throw new Error("에러!!! 비쌍!!");
     const data = await fetch(`$ {API_URL}/${id}/videos`).then((res) =>
         res.json()
     );
