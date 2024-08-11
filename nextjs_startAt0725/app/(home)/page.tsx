@@ -18,7 +18,7 @@ export default async function HomePage() {
     return (
         <div className={styles["container"]}>
             {movies.map((movie) => (
-                <Movie key={"movie_item" + movie.id.toString()} {...movie} />
+                <Movie key={"movie_item" + movie.id} {...movie} />
             ))}
         </div>
     );
