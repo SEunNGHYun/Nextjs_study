@@ -3,6 +3,7 @@ import { BookData } from "@/types";
 
 export async function fetchOneBook(id : number) : Promise<BookData | null>  {
 
+    /* eslint-disable */
     let url = `http://localhost:12345/book/${id}`
     
     try{ 
