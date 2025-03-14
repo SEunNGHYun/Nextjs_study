@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { BookData } from "@/types";
+=======
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
 import style from "./page.module.css";
 
 const mockData = {
@@ -13,11 +16,16 @@ const mockData = {
     "https://shopping-phinf.pstatic.net/main_3888828/38888282618.20230913071643.jpg",
 };
 
+<<<<<<< HEAD
 export default async function Page({
+=======
+export default function Page({
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
   params,
 }: {
   params: { id: string | string[] };
 }) {
+<<<<<<< HEAD
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/${params.id}`);
   if (!response.ok) {
     return <div>오류가 발생하였습니다.</div>
@@ -28,11 +36,23 @@ export default async function Page({
   
 
 
+=======
+  const {
+    id,
+    title,
+    subTitle,
+    description,
+    author,
+    publisher,
+    coverImgUrl,
+  } = mockData;
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
 
   return (
     <div className={style.container}>
       <div
         className={style.cover_img_container}
+<<<<<<< HEAD
         style={{ backgroundImage: `url('${book.coverImgUrl}')` }}
       >
         <img src={book.coverImgUrl} />
@@ -43,6 +63,18 @@ export default async function Page({
         {book.author} | {book.publisher}
       </div>
       <div className={style.description}>{book.description}</div>
+=======
+        style={{ backgroundImage: `url('${coverImgUrl}')` }}
+      >
+        <img src={coverImgUrl} />
+      </div>
+      <div className={style.title}>{title}</div>
+      <div className={style.subTitle}>{subTitle}</div>
+      <div className={style.author}>
+        {author} | {publisher}
+      </div>
+      <div className={style.description}>{description}</div>
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
     </div>
   );
 }

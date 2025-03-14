@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "section3",
+=======
+  "name": "section02",
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +13,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "next": "15.0.0-rc.0"
+=======
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.8"
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
   },
   "devDependencies": {
     "typescript": "^5",
@@ -19,6 +29,10 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
+<<<<<<< HEAD
     "eslint-config-next": "15.0.0-rc.0"
+=======
+    "eslint-config-next": "14.2.8"
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
   }
 }

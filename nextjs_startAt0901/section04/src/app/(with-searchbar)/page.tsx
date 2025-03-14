@@ -1,6 +1,7 @@
 import BookItem from "@/components/book-item";
 import style from "./page.module.css";
 import books from "@/mock/books.json";
+<<<<<<< HEAD
 import { BookData } from "@/types";
 
 async function AllBooks() {
@@ -35,15 +36,31 @@ async function RecoBooks() {
 export default async function Home() {
   
 
+=======
+
+export default function Home() {
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
   return (
     <div className={style.container}>
       <section>
         <h3>지금 추천하는 도서</h3>
+<<<<<<< HEAD
         <RecoBooks />
       </section>
       <section>
         <h3>등록된 모든 도서</h3>
         <AllBooks/>
+=======
+        {books.map((book) => (
+          <BookItem key={book.id} {...book} />
+        ))}
+      </section>
+      <section>
+        <h3>등록된 모든 도서</h3>
+        {books.map((book) => (
+          <BookItem key={book.id} {...book} />
+        ))}
+>>>>>>> e6736947ef0f1c1d1c4b536b3312dd77953850a0
       </section>
     </div>
   );
